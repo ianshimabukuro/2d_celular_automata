@@ -7,15 +7,16 @@ import copy
 import imageio
 
 order = 100
-percentage = 0.05
+one_percentage = 0.8
 #Initialize the initial matrix
 a= np.random.random(size=(order, order))
-for i in range(1, a.shape[0]):
-    for j in range(1, a.shape[1]):
-        if a[i][j] < percentage:
-            a[i][j] = 0
-        else:
+for i in range(0, a.shape[0]):
+    for j in range(0, a.shape[1]):
+        if a[i][j] < one_percentage:
             a[i][j] = 1
+        else:
+            a[i][j] = 0
+print(a)
 
 
 
@@ -28,6 +29,6 @@ a[:, -1] = 0  # Last column
 for i in range(0,500):
     a = grid2_function(a)
     plt.clf()
-    plt.imshow(a, cmap=plt.get_cmap('Paired'))
-    plt.pause(0.1)
+    plt.imshow(a, cmap=plt.get_cmap('gray'))
+    plt.pause(0.05)
 

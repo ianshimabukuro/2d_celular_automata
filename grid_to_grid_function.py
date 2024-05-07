@@ -34,6 +34,9 @@ def grid2_function(x):
                 x[i][j]=0
             elif n_n == 3 and x[i][j] == 0:
                 x[i][j] = 1
+            else:
+                x[i][j] = 0
+
 
 
     return x
